@@ -1,1 +1,199 @@
-{"properties":{"cookies":{"default":[],"description":"Cookies injected before capture. Each item needs name, value, and domain (or url).","editor":"json","title":"Cookies","type":"array"},"delayMs":{"default":1000,"description":"Extra pause after load for late animations or lazy images.","maximum":30000,"minimum":0,"title":"Extra delay (ms)","type":"integer"},"devicePreset":{"default":"desktop","description":"Pick a device viewport, or choose Custom to use your own dimensions below.","editor":"select","enum":["custom","desktop","laptop","tablet","mobile"],"title":"Device preset","type":"string"},"deviceScaleFactor":{"default":1,"description":"Pixel ratio for high-DPI captures. Used only when the device preset is Custom.","maximum":3,"minimum":1,"title":"Device scale factor","type":"number"},"displayHeaderFooter":{"default":false,"description":"Render a header and footer on every PDF page using the templates below.","title":"Header and footer","type":"boolean"},"footerTemplate":{"default":"","description":"HTML for the PDF footer. Supports <span class=\"pageNumber\"> and <span class=\"totalPages\">.","editor":"textarea","title":"Footer template (HTML)","type":"string"},"fullPage":{"default":true,"description":"Capture the entire scrollable page, not just the viewport. Always on for PDFs.","title":"Full page","type":"boolean"},"headerTemplate":{"default":"","description":"HTML for the PDF header. Supports <span class=\"pageNumber\"> and <span class=\"totalPages\">.","editor":"textarea","title":"Header template (HTML)","type":"string"},"headers":{"default":{},"description":"Custom request headers sent with every page load, e.g. {\"Authorization\": \"Bearer ...\"}.","editor":"json","title":"Extra HTTP headers","type":"object"},"jpegQuality":{"default":85,"description":"Only used when the output format is JPEG.","maximum":100,"minimum":10,"title":"JPEG quality","type":"integer"},"outputFormat":{"default":"png","description":"Screenshot as PNG/JPEG image, or a print-ready PDF document.","editor":"select","enum":["png","jpeg","pdf"],"title":"Output format","type":"string"},"pdfFormat":{"default":"A4","editor":"select","enum":["A4","Letter","Legal"],"title":"Paper size","type":"string"},"pdfLandscape":{"default":false,"title":"Landscape orientation","type":"boolean"},"pdfMargin":{"default":"0.4in","description":"Margin applied to all four sides, e.g. 0.4in or 10mm.","title":"Page margin","type":"string"},"printBackground":{"default":true,"description":"Include CSS backgrounds and colors in the PDF.","title":"Print backgrounds","type":"boolean"},"sectionAdvanced":{"editor":"hidden","sectionCaption":"Advanced","title":"Advanced","type":"string"},"sectionCapture":{"editor":"hidden","sectionCaption":"Capture options","title":"Capture options","type":"string"},"sectionPdf":{"editor":"hidden","sectionCaption":"PDF options (only when output format is PDF)","title":"PDF options","type":"string"},"timeoutMs":{"default":60000,"description":"Maximum time to wait for a single page to load.","maximum":180000,"minimum":5000,"title":"Page timeout (ms)","type":"integer"},"urls":{"description":"One or more public http(s) URLs. Each URL is rendered in a real Chromium browser and captured. Internal/private addresses are blocked.","editor":"stringList","maxItems":50,"minItems":1,"prefill":["https://example.com"],"title":"URLs to capture","type":"array"},"viewportHeight":{"default":1080,"description":"Used only when the device preset is Custom.","maximum":4320,"minimum":240,"title":"Viewport height (px)","type":"integer"},"viewportWidth":{"default":1920,"description":"Used only when the device preset is Custom.","maximum":7680,"minimum":320,"title":"Viewport width (px)","type":"integer"},"waitUntil":{"default":"networkidle","description":"How long to wait for the page to settle before capturing.","editor":"select","enum":["load","domcontentloaded","networkidle","commit"],"title":"Wait until","type":"string"}},"required":["urls"],"schemaVersion":1,"title":"Snapframe input","type":"object"}
+{
+  "properties": {
+    "cookies": {
+      "default": [],
+      "description": "Cookies injected before capture. Each item needs name, value, and domain (or url).",
+      "editor": "json",
+      "title": "Cookies",
+      "type": "array"
+    },
+    "delayMs": {
+      "default": 1000,
+      "description": "Extra pause after load for late animations or lazy images.",
+      "maximum": 30000,
+      "minimum": 0,
+      "title": "Extra delay (ms)",
+      "type": "integer"
+    },
+    "devicePreset": {
+      "default": "desktop",
+      "description": "Pick a device viewport, or choose Custom to use your own dimensions below.",
+      "editor": "select",
+      "enum": [
+        "custom",
+        "desktop",
+        "laptop",
+        "tablet",
+        "mobile"
+      ],
+      "title": "Device preset",
+      "type": "string"
+    },
+    "deviceScaleFactor": {
+      "default": 1,
+      "description": "Pixel ratio for high-DPI captures. Used only when the device preset is Custom.",
+      "maximum": 3,
+      "minimum": 1,
+      "title": "Device scale factor",
+      "type": "number"
+    },
+    "displayHeaderFooter": {
+      "default": false,
+      "description": "Render a header and footer on every PDF page using the templates below.",
+      "title": "Header and footer",
+      "type": "boolean"
+    },
+    "footerTemplate": {
+      "default": "",
+      "description": "HTML for the PDF footer. Supports <span class=\"pageNumber\"> and <span class=\"totalPages\">.",
+      "editor": "textarea",
+      "title": "Footer template (HTML)",
+      "type": "string"
+    },
+    "fullPage": {
+      "default": true,
+      "description": "Capture the entire scrollable page, not just the viewport. Always on for PDFs.",
+      "title": "Full page",
+      "type": "boolean"
+    },
+    "headerTemplate": {
+      "default": "",
+      "description": "HTML for the PDF header. Supports <span class=\"pageNumber\"> and <span class=\"totalPages\">.",
+      "editor": "textarea",
+      "title": "Header template (HTML)",
+      "type": "string"
+    },
+    "headers": {
+      "default": {},
+      "description": "Custom request headers sent with every page load, e.g. {\"Authorization\": \"Bearer ...\"}.",
+      "editor": "json",
+      "title": "Extra HTTP headers",
+      "type": "object"
+    },
+    "jpegQuality": {
+      "default": 85,
+      "description": "Only used when the output format is JPEG.",
+      "maximum": 100,
+      "minimum": 10,
+      "title": "JPEG quality",
+      "type": "integer"
+    },
+    "outputFormat": {
+      "default": "png",
+      "description": "Screenshot as PNG/JPEG image, or a print-ready PDF document.",
+      "editor": "select",
+      "enum": [
+        "png",
+        "jpeg",
+        "pdf"
+      ],
+      "title": "Output format",
+      "type": "string"
+    },
+    "pdfFormat": {
+      "default": "A4",
+      "editor": "select",
+      "enum": [
+        "A4",
+        "Letter",
+        "Legal"
+      ],
+      "title": "Paper size",
+      "type": "string",
+      "description": "Paper size for the PDF document."
+    },
+    "pdfLandscape": {
+      "default": false,
+      "title": "Landscape orientation",
+      "type": "boolean",
+      "description": "Render the PDF in landscape orientation."
+    },
+    "pdfMargin": {
+      "default": "0.4in",
+      "description": "Margin applied to all four sides, e.g. 0.4in or 10mm.",
+      "title": "Page margin",
+      "type": "string"
+    },
+    "printBackground": {
+      "default": true,
+      "description": "Include CSS backgrounds and colors in the PDF.",
+      "title": "Print backgrounds",
+      "type": "boolean"
+    },
+    "sectionAdvanced": {
+      "editor": "hidden",
+      "sectionCaption": "Advanced",
+      "title": "Advanced",
+      "type": "string",
+      "description": "Advanced"
+    },
+    "sectionCapture": {
+      "editor": "hidden",
+      "sectionCaption": "Capture options",
+      "title": "Capture options",
+      "type": "string",
+      "description": "Capture options"
+    },
+    "sectionPdf": {
+      "editor": "hidden",
+      "sectionCaption": "PDF options (only when output format is PDF)",
+      "title": "PDF options",
+      "type": "string",
+      "description": "PDF options"
+    },
+    "timeoutMs": {
+      "default": 60000,
+      "description": "Maximum time to wait for a single page to load.",
+      "maximum": 180000,
+      "minimum": 5000,
+      "title": "Page timeout (ms)",
+      "type": "integer"
+    },
+    "urls": {
+      "description": "One or more public http(s) URLs. Each URL is rendered in a real Chromium browser and captured. Internal/private addresses are blocked.",
+      "editor": "stringList",
+      "maxItems": 50,
+      "minItems": 1,
+      "prefill": [
+        "https://example.com"
+      ],
+      "title": "URLs to capture",
+      "type": "array"
+    },
+    "viewportHeight": {
+      "default": 1080,
+      "description": "Used only when the device preset is Custom.",
+      "maximum": 4320,
+      "minimum": 240,
+      "title": "Viewport height (px)",
+      "type": "integer"
+    },
+    "viewportWidth": {
+      "default": 1920,
+      "description": "Used only when the device preset is Custom.",
+      "maximum": 7680,
+      "minimum": 320,
+      "title": "Viewport width (px)",
+      "type": "integer"
+    },
+    "waitUntil": {
+      "default": "networkidle",
+      "description": "How long to wait for the page to settle before capturing.",
+      "editor": "select",
+      "enum": [
+        "load",
+        "domcontentloaded",
+        "networkidle",
+        "commit"
+      ],
+      "title": "Wait until",
+      "type": "string"
+    }
+  },
+  "required": [
+    "urls"
+  ],
+  "schemaVersion": 1,
+  "title": "Snapframe input",
+  "type": "object"
+}
