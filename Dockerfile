@@ -7,11 +7,12 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && fc-cache -f
 
-# The base image already ships the Apify SDK and Playwright with matching
-# browser binaries; only project extras go here (deliberately no playwright pin,
-# to avoid a version mismatch with the image's bundled Chromium).
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+# Install the Apify SDK explicitly (not guaranteed present in every base image
+# tag). This can resolve a newer Playwright via apify -> crawlee, so reinstall
+# the matching Chromium browsers right after to keep driver and browsers in sync.
+RUN pip install --no-cache-dir -r requirements.txt \
+    && python -m playwright install --with-deps chromium
 
 COPY . ./
 
