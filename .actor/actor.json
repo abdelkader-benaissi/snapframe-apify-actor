@@ -6,11 +6,12 @@
   "environmentVariables": {
     "APIFY_HEADLESS": "1"
   },
-  "input": "./INPUT_SCHEMA.json",
   "name": "snapframe-screenshot-pdf",
   "storages": {
     "dataset": "./dataset_schema.json"
   },
   "title": "Snapframe \u2014 Website Screenshots & PDFs",
-  "version": "0.1"
+  "version": "0.1",
+  "inputSchema": "./INPUT_SCHEMA.json",
+  "outputSchema": "./OUTPUT_SCHEMA.json"
 }
