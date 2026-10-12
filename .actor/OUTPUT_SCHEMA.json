@@ -1,1 +1,33 @@
-{"actorSpecification":1,"properties":{"failed":{"description":"Number of URLs that failed (blocked address, timeout, navigation error).","title":"Failed","type":"integer"},"finishedAt":{"description":"UTC timestamp when the run finished.","title":"Finished at","type":"string"},"outputFormat":{"description":"Format used for this run: png, jpeg or pdf.","title":"Output format","type":"string"},"succeeded":{"description":"Number of URLs captured successfully.","title":"Succeeded","type":"integer"},"total":{"description":"Number of URLs submitted for capture.","title":"Total URLs","type":"integer"}},"title":"Snapframe output","type":"object"}
+{
+  "actorSpecification": 1,
+  "properties": {
+    "failed": {
+      "description": "Number of URLs that failed (blocked address, timeout, navigation error).",
+      "title": "Failed",
+      "type": "integer"
+    },
+    "finishedAt": {
+      "description": "UTC timestamp when the run finished.",
+      "title": "Finished at",
+      "type": "string"
+    },
+    "outputFormat": {
+      "description": "Format used for this run: png, jpeg or pdf.",
+      "title": "Output format",
+      "type": "string"
+    },
+    "succeeded": {
+      "description": "Number of URLs captured successfully.",
+      "title": "Succeeded",
+      "type": "integer"
+    },
+    "total": {
+      "description": "Number of URLs submitted for capture.",
+      "title": "Total URLs",
+      "type": "integer"
+    }
+  },
+  "title": "Snapframe output",
+  "type": "object",
+  "actorOutputSchemaVersion": 1
+}
