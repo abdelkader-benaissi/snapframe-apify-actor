@@ -1,0 +1,2 @@
+# The apify/actor-python-playwright base image preinstalls the Apify SDK
+# and a matching Playwright + Chromium build. Keep project extras here.
