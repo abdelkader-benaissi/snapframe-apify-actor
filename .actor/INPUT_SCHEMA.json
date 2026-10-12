@@ -13,7 +13,8 @@
       "maximum": 30000,
       "minimum": 0,
       "title": "Extra delay (ms)",
-      "type": "integer"
+      "type": "integer",
+      "editor": "integer"
     },
     "devicePreset": {
       "default": "desktop",
@@ -35,13 +36,15 @@
       "maximum": 3,
       "minimum": 1,
       "title": "Device scale factor",
-      "type": "number"
+      "type": "number",
+      "editor": "number"
     },
     "displayHeaderFooter": {
       "default": false,
       "description": "Render a header and footer on every PDF page using the templates below.",
       "title": "Header and footer",
-      "type": "boolean"
+      "type": "boolean",
+      "editor": "boolean"
     },
     "footerTemplate": {
       "default": "",
@@ -54,7 +57,8 @@
       "default": true,
       "description": "Capture the entire scrollable page, not just the viewport. Always on for PDFs.",
       "title": "Full page",
-      "type": "boolean"
+      "type": "boolean",
+      "editor": "boolean"
     },
     "headerTemplate": {
       "default": "",
@@ -76,7 +80,8 @@
       "maximum": 100,
       "minimum": 10,
       "title": "JPEG quality",
-      "type": "integer"
+      "type": "integer",
+      "editor": "integer"
     },
     "outputFormat": {
       "default": "png",
@@ -106,19 +111,22 @@
       "default": false,
       "title": "Landscape orientation",
       "type": "boolean",
-      "description": "Render the PDF in landscape orientation."
+      "description": "Render the PDF in landscape orientation.",
+      "editor": "boolean"
     },
     "pdfMargin": {
       "default": "0.4in",
       "description": "Margin applied to all four sides, e.g. 0.4in or 10mm.",
       "title": "Page margin",
-      "type": "string"
+      "type": "string",
+      "editor": "textfield"
     },
     "printBackground": {
       "default": true,
       "description": "Include CSS backgrounds and colors in the PDF.",
       "title": "Print backgrounds",
-      "type": "boolean"
+      "type": "boolean",
+      "editor": "boolean"
     },
     "sectionAdvanced": {
       "editor": "hidden",
@@ -147,7 +155,8 @@
       "maximum": 180000,
       "minimum": 5000,
       "title": "Page timeout (ms)",
-      "type": "integer"
+      "type": "integer",
+      "editor": "integer"
     },
     "urls": {
       "description": "One or more public http(s) URLs. Each URL is rendered in a real Chromium browser and captured. Internal/private addresses are blocked.",
@@ -166,7 +175,8 @@
       "maximum": 4320,
       "minimum": 240,
       "title": "Viewport height (px)",
-      "type": "integer"
+      "type": "integer",
+      "editor": "integer"
     },
     "viewportWidth": {
       "default": 1920,
@@ -174,7 +184,8 @@
       "maximum": 7680,
       "minimum": 320,
       "title": "Viewport width (px)",
-      "type": "integer"
+      "type": "integer",
+      "editor": "integer"
     },
     "waitUntil": {
       "default": "networkidle",
