@@ -1,1 +1,110 @@
-{"actorSpecification":1,"fields":{"bytes":{"description":"File size in bytes.","title":"Bytes","type":"integer"},"fileName":{"description":"Key of the file in the key-value store.","title":"File name","type":"string"},"fileUrl":{"description":"Direct download URL of the captured file.","title":"File URL","type":"string"},"loadTimeMs":{"description":"Time from navigation start to capture.","title":"Load time (ms)","type":"integer"},"ok":{"description":"Whether the capture succeeded.","title":"OK","type":"boolean"},"outputFormat":{"description":"png, jpeg or pdf.","title":"Format","type":"string"},"reason":{"description":"Why the capture failed, when ok is false.","title":"Failure reason","type":"string"},"statusCode":{"description":"HTTP status of the page load.","title":"HTTP status","type":"integer"},"title":{"description":"The page <title> at capture time.","title":"Page title","type":"string"},"url":{"description":"The captured page URL.","title":"URL","type":"string"}},"views":{"overview":{"display":{"component":"table","properties":{"bytes":{"format":"number","label":"Bytes"},"fileUrl":{"format":"link","label":"File"},"loadTimeMs":{"format":"number","label":"Load ms"},"ok":{"format":"boolean","label":"OK"},"outputFormat":{"format":"text","label":"Format"},"reason":{"format":"text","label":"Failure reason"},"title":{"format":"text","label":"Page title"},"url":{"format":"link","label":"URL"}}},"title":"Overview","transformation":{"fields":["url","ok","outputFormat","fileUrl","bytes","title","loadTimeMs","reason"]}}}}
+{
+  "actorSpecification": 1,
+  "fields": {
+    "bytes": {
+      "description": "File size in bytes.",
+      "title": "Bytes",
+      "type": "integer"
+    },
+    "fileName": {
+      "description": "Key of the file in the key-value store.",
+      "title": "File name",
+      "type": "string"
+    },
+    "fileUrl": {
+      "description": "Direct download URL of the captured file.",
+      "title": "File URL",
+      "type": "string"
+    },
+    "loadTimeMs": {
+      "description": "Time from navigation start to capture.",
+      "title": "Load time (ms)",
+      "type": "integer"
+    },
+    "ok": {
+      "description": "Whether the capture succeeded.",
+      "title": "OK",
+      "type": "boolean"
+    },
+    "outputFormat": {
+      "description": "png, jpeg or pdf.",
+      "title": "Format",
+      "type": "string"
+    },
+    "reason": {
+      "description": "Why the capture failed, when ok is false.",
+      "title": "Failure reason",
+      "type": "string"
+    },
+    "statusCode": {
+      "description": "HTTP status of the page load.",
+      "title": "HTTP status",
+      "type": "integer"
+    },
+    "title": {
+      "description": "The page <title> at capture time.",
+      "title": "Page title",
+      "type": "string"
+    },
+    "url": {
+      "description": "The captured page URL.",
+      "title": "URL",
+      "type": "string"
+    }
+  },
+  "views": {
+    "overview": {
+      "display": {
+        "component": "table",
+        "properties": {
+          "bytes": {
+            "format": "number",
+            "label": "Bytes"
+          },
+          "fileUrl": {
+            "format": "link",
+            "label": "File"
+          },
+          "loadTimeMs": {
+            "format": "number",
+            "label": "Load ms"
+          },
+          "ok": {
+            "format": "boolean",
+            "label": "OK"
+          },
+          "outputFormat": {
+            "format": "text",
+            "label": "Format"
+          },
+          "reason": {
+            "format": "text",
+            "label": "Failure reason"
+          },
+          "title": {
+            "format": "text",
+            "label": "Page title"
+          },
+          "url": {
+            "format": "link",
+            "label": "URL"
+          }
+        }
+      },
+      "title": "Overview",
+      "transformation": {
+        "fields": [
+          "url",
+          "ok",
+          "outputFormat",
+          "fileUrl",
+          "bytes",
+          "title",
+          "loadTimeMs",
+          "reason"
+        ]
+      }
+    }
+  },
+  "title": "Snapframe capture results"
+}
