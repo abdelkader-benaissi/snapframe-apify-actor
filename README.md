@@ -78,7 +78,7 @@ Platform compute costs are passed through to the run (standard Apify compute uni
 ## API examples
 
 ```bash
-curl -X POST "https://api.apify.com/v2/acts/<your-username>~snapframe-screenshot-pdf/run-sync-get-dataset-items?token=$APIFY_TOKEN" \
+curl -X POST "https://api.apify.com/v2/acts/abdou_009~snapframe-apify-actor/run-sync-get-dataset-items?token=$APIFY_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"urls": ["https://example.com"], "outputFormat": "pdf"}'
 ```
@@ -87,7 +87,7 @@ curl -X POST "https://api.apify.com/v2/acts/<your-username>~snapframe-screenshot
 from apify_client import ApifyClient
 
 client = ApifyClient("YOUR_APIFY_TOKEN")
-run = client.actor("<your-username>/snapframe-screenshot-pdf").call({
+run = client.actor("abdou_009/snapframe-apify-actor").call({
     "urls": ["https://example.com"],
     "outputFormat": "png",
     "devicePreset": "mobile",
